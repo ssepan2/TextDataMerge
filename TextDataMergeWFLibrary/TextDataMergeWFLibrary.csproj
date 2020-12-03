@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CED3C9CA-C107-46A1-AD03-63A9B47F840F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TextDataMergeWFLibrary</RootNamespace>
+    <AssemblyName>TextDataMergeWFLibrary</AssemblyName>
+    <ProjectTypeGuids>{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Workflow.Activities">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.ComponentModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.Runtime">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.WorkflowServices">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="TextDataFunctionActivityWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextDataFunctionActivityWorkflow.designer.cs">
+      <DependentUpon>TextDataFunctionActivityWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextDataMergeWorkflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextDataMergeWorkflow.designer.cs">
+      <DependentUpon>TextDataMergeWorkflow.cs</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Ssepan.Application\Ssepan.Application.csproj">
+      <Project>{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}</Project>
+      <Name>Ssepan.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ssepan.Collections\Ssepan.Collections.csproj">
+      <Project>{07E139E8-739C-41C7-A53A-6AF3288B7B83}</Project>
+      <Name>Ssepan.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ssepan.Utility\Ssepan.Utility.csproj">
+      <Project>{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}</Project>
+      <Name>Ssepan.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextDataFunctionActivities\TextDataFunctionActivities.csproj">
+      <Project>{E6A3254E-AFF6-40F1-B4C8-70D5E241DF5C}</Project>
+      <Name>TextDataFunctionActivities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextDataMergeLibrary\TextDataMergeLibrary.csproj">
+      <Project>{83F1E22F-F6F4-4EE1-8AE2-751527D735DD}</Project>
+      <Name>TextDataMergeLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TextDataFunctionActivityWorkflow.rules">
+      <DependentUpon>TextDataFunctionActivityWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextDataMergeWorkflow.rules">
+      <DependentUpon>TextDataMergeWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <Import Project="$(MSBuildToolsPath)\Workflow.Targets" />
+</Project>
