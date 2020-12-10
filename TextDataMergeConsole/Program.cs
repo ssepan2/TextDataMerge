@@ -7,7 +7,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Ssepan.Application;
-using Ssepan.Application.WinConsole;
 using Ssepan.Collections;
 using Ssepan.Utility;
 using TextDataMergeLibrary;

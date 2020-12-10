@@ -6,7 +6,6 @@ using System.Reflection;
 using System.Windows.Forms;
 using TextDataMergeLibrary;
 using Ssepan.Application;
-using Ssepan.Application.WinConsole;
 using Ssepan.Utility;
 
 namespace TextDataMergeForms

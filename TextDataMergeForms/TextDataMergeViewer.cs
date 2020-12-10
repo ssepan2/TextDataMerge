@@ -15,8 +15,6 @@ using System.Windows.Forms;
 using TextDataMergeLibrary;
 using TextDataMergeLibrary.Properties;
 using Ssepan.Application;
-using Ssepan.Application.WinForms;
-using Ssepan.Application.WinConsole;
 using Ssepan.Collections;
 using Ssepan.DataBinding;
 using Ssepan.Io;

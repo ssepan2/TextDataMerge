@@ -1,140 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E8551779-9314-42A7-BE27-F2051A607183}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TextDataMergeForms</RootNamespace>
-    <AssemblyName>TextDataMergeForms</AssemblyName>
-    <ApplicationIcon>images\TextDataMerge.ico</ApplicationIcon>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <StartupObject>
-    </StartupObject>
-    <TargetFrameworkProfile />
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web.Extensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="TextDataMergeViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TextDataMergeViewer.Designer.cs">
-      <DependentUpon>TextDataMergeViewer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\TextDataMergeViewModel.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <SubType>Designer</SubType>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TextDataMergeViewer.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>TextDataMergeViewer.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="images\TextDataMerge.ico" />
-    <Content Include="License.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Ssepan.Application\Ssepan.Application.csproj">
-      <Project>{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}</Project>
-      <Name>Ssepan.Application</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Ssepan.Collections\Ssepan.Collections.csproj">
-      <Project>{07E139E8-739C-41C7-A53A-6AF3288B7B83}</Project>
-      <Name>Ssepan.Collections</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Ssepan.DataBinding\Ssepan.DataBinding.csproj">
-      <Project>{3E3137B5-D920-489C-AFA1-84E9D91F8D48}</Project>
-      <Name>Ssepan.DataBinding</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Ssepan.Io\Ssepan.Io.csproj">
-      <Project>{9EFE2EC6-F48E-4E4E-927F-068B54210E09}</Project>
-      <Name>Ssepan.Io</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Ssepan.Utility\Ssepan.Utility\Ssepan.Utility.csproj">
-      <Project>{9c11d8dd-e335-4fe3-aae6-5c3b17732890}</Project>
-      <Name>Ssepan.Utility</Name>
     </ProjectReference>
     <ProjectReference Include="..\TextDataFunctionControls\TextDataFunctionControls.csproj">
-      <Project>{C7DC7B44-A777-442E-AD54-6B5FB9F7932D}</Project>
-      <Name>TextDataFunctionControls</Name>
     </ProjectReference>
     <ProjectReference Include="..\TextDataMergeLibrary\TextDataMergeLibrary.csproj">
-      <Project>{83F1E22F-F6F4-4EE1-8AE2-751527D735DD}</Project>
-      <Name>TextDataMergeLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

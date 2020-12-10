@@ -35,6 +35,10 @@ HISTORY:
 4.0: (PLANNED)
 ~TODO:Refactor object model / UI / WF-samples to allow for sequences of functions.
 
+3.11:
+~update to Framework 4.8
+~convert to SDK style project
+
 3.10 (CURRENT)
 ~Refactored to use new MVVM / MVC hybrid.
 ~Updated Ssepan.* to 2.6
