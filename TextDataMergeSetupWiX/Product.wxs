@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="TextDataMerge" Language="1033" Version="3.11.0.0" Manufacturer="Stephen J Sepan" UpgradeCode="5425b806-15a4-49e1-bd8b-78f1808e9978">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="TextDataMerge" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="TextDataMerge" />
+			</Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="TextDataMerge"/>
+      </Directory>
+    </Directory>
+	</Fragment>
+
+  <Fragment>
+      <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="1f0bfb70-6842-4c69-9d82-9260eacb7efc">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="TextDataMerge"
+                  Description="TextDataMergeForms"
+                  Target="[#TextDataMergeForms.exe]"
+                  WorkingDirectory="INSTALLFOLDER"/>
+        <RemoveFolder Id="CleanUpShortCut" Directory="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\StephenJSepan\TextDataMergeForms" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="TextDataMergeConsole.exe">
+        <File Source="$(var.TextDataMergeConsole.TargetPath)" />
+      </Component>
+      <Component Id="TextDataMergeConsole.exe.config">
+        <File Source="$(var.TextDataMergeConsole.TargetDir)\$(var.TextDataMergeConsole.TargetFileName).config" />
+      </Component>
+      <Component Id="TextDataMergeConsole.pdb">
+        <File Source="$(var.TextDataMergeConsole.TargetDir)\$(var.TextDataMergeConsole.TargetName).pdb" />
+      </Component>
+      <Component Id="TextDataMergeForms.exe"> 
+				<File Source="$(var.TextDataMergeForms.TargetPath)" />
+			 </Component>
+      <Component Id="TextDataMergeForms.exe.config">
+        <File Source="$(var.TextDataMergeForms.TargetDir)\$(var.TextDataMergeForms.TargetFileName).config" />
+      </Component>
+      <Component Id="TextDataMergeForms.pdb">
+        <File Source="$(var.TextDataMergeForms.TargetDir)\$(var.TextDataMergeForms.TargetName).pdb" />
+      </Component>
+      <Component Id="License.txt">
+        <File Source="$(var.TextDataMergeForms.ProjectDir)\License.txt" />
+      </Component>
+      <Component Id="TextDataMergeLibrary.dll">
+        <File Source="$(var.TextDataMergeLibrary.TargetPath)" />
+      </Component>
+      <Component Id="TextDataMergeLibrary.pdb">
+        <File Source="$(var.TextDataMergeLibrary.TargetDir)\$(var.TextDataMergeLibrary.TargetName).pdb" />
+      </Component>
+      <Component Id="readme.txt">
+        <File Source="$(var.TextDataMergeLibrary.ProjectDir)\readme.txt" />
+      </Component>
+      <Component Id="TextDataFunctionControls.dll">
+        <File Source="$(var.TextDataFunctionControls.TargetPath)" />
+      </Component>
+      <Component Id="TextDataFunctionControls.pdb">
+        <File Source="$(var.TextDataFunctionControls.TargetDir)\$(var.TextDataFunctionControls.TargetName).pdb" />
+      </Component>
+      <Component Id="Ssepan.Application.dll">
+        <File Source="$(var.Ssepan.Application.TargetPath)" />
+      </Component>
+      <Component Id="Ssepan.Application.pdb">
+        <File Source="$(var.Ssepan.Application.TargetDir)\$(var.Ssepan.Application.TargetName).pdb" />
+      </Component>
+      <Component Id="Ssepan.Collections.dll">
+        <File Source="$(var.Ssepan.Collections.TargetPath)" />
+      </Component>
+      <Component Id="Ssepan.Collections.pdb">
+        <File Source="$(var.Ssepan.Collections.TargetDir)\$(var.Ssepan.Collections.TargetName).pdb" />
+      </Component>
+      <Component Id="Ssepan.DataBinding.dll">
+        <File Source="$(var.Ssepan.DataBinding.TargetPath)" />
+      </Component>
+      <Component Id="Ssepan.DataBinding.pdb">
+        <File Source="$(var.Ssepan.DataBinding.TargetDir)\$(var.Ssepan.DataBinding.TargetName).pdb" />
+      </Component>
+      <Component Id="Ssepan.Io.dll">
+        <File Source="$(var.Ssepan.Io.TargetPath)" />
+      </Component>
+      <Component Id="Ssepan.Io.pdb">
+        <File Source="$(var.Ssepan.Io.TargetDir)\$(var.Ssepan.Io.TargetName).pdb" />
+      </Component>
+      <Component Id="Ssepan.Utility.dll">
+        <File Source="$(var.Ssepan.Utility.TargetPath)" />
+      </Component>
+      <Component Id="Ssepan.Utility.pdb">
+        <File Source="$(var.Ssepan.Utility.TargetDir)\$(var.Ssepan.Utility.TargetName).pdb" />
+      </Component>
+    </ComponentGroup>
+	</Fragment>
+</Wix>
