@@ -472,8 +472,13 @@ namespace TextDataMergeForms
         {
             try
             {
-                //subscribe view to model notifications
-                ModelController<TDMModel>.Model.PropertyChanged += PropertyChangedEventHandlerDelegate;
+                //tell controller how model should notify view about non-persisted properties AND including model properties that may be part of settings
+                ModelController<TDMModel>.DefaultHandler = PropertyChangedEventHandlerDelegate;
+
+                //tell controller how settings should notify view about persisted properties
+                SettingsController<Settings>.DefaultHandler = PropertyChangedEventHandlerDelegate;
+
+                InitModelAndSettings();
 
                 FileDialogInfo settingsFileDialogInfo =
                     new FileDialogInfo
@@ -575,6 +580,20 @@ namespace TextDataMergeForms
                     ViewModel.ErrorMessage = ex.Message;
                 }
                 Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
+            }
+        }
+
+        protected void InitModelAndSettings()
+        {
+            //create Settings before first use by Model
+            if (SettingsController<Settings>.Settings == null)
+            {
+                SettingsController<Settings>.New();
+            }
+            //Model properties rely on Settings, so don't call Refresh before this is run.
+            if (ModelController<TDMModel>.Model == null)
+            {
+                ModelController<TDMModel>.New();
             }
         }
 

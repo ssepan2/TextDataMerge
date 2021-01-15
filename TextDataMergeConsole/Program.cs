@@ -114,8 +114,6 @@ namespace TextDataMergeConsole
                 //load, parse, run switches
                 DoSwitches(args);
 
-                InitModelAndSettings();
-
                 returnValue = new App()._Main();
             }
             catch (Exception ex)
@@ -158,20 +156,6 @@ namespace TextDataMergeConsole
                 }
             );
             //Note: switches are processed before Model or Settings are accessed.
-        }
-
-        static void InitModelAndSettings()
-        {
-            //create Settings before first use by Model
-            if (SettingsController<Settings>.Settings == null)
-            {
-                SettingsController<Settings>.New();
-            }
-            //Model properties rely on Settings, so don't call Refresh before this is run.
-            if (ModelController<TDMModel>.Model == null)
-            {
-                ModelController<TDMModel>.New();
-            }
         }
         #endregion ConsoleAppBase
 

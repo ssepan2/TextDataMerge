@@ -4,15 +4,17 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
-using Ssepan.Utility;
 using System.Diagnostics;
 using System.Reflection;
+using Ssepan.Application;
+using Ssepan.Utility;
 
 namespace TextDataMergeLibrary
 {
     [Serializable()]
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class DataFile :
+        SettingsComponentBase,
         IDisposable,
         IEquatable<DataFile>,
         INotifyPropertyChanged

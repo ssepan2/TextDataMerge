@@ -6,9 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
-using Ssepan.Utility;
 using System.Diagnostics;
 using System.Reflection;
+using Ssepan.Application;
+using Ssepan.Utility;
 
 namespace TextDataMergeLibrary
 {
@@ -20,6 +21,7 @@ namespace TextDataMergeLibrary
     [Serializable()]
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class Condition :
+        SettingsComponentBase,
         IEquatable<Condition>,
         INotifyPropertyChanged
     {
@@ -68,30 +70,30 @@ namespace TextDataMergeLibrary
         #endregion Constructors
 
         #region INotifyPropertyChanged support
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
-        void OnPropertyChanged(String propertyName)
-        {
-            try
-            {
-                if (this.PropertyChanged != null)
-                {
-                    this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-#if debug
-                    Log.Write(
-                        System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Module.Name,
-                        Log.FormatEntry(String.Format("PropertyChanged: {0}", propertyName), System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.FullName, System.Reflection.MethodBase.GetCurrentMethod().Name),
-                        System.Diagnostics.EventLogEntryType.Information,
-                            99);
-#endif
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
-                //throw;
-            }
-        }
+//        void OnPropertyChanged(String propertyName)
+//        {
+//            try
+//            {
+//                if (this.PropertyChanged != null)
+//                {
+//                    this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+//#if debug
+//                    Log.Write(
+//                        System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Module.Name,
+//                        Log.FormatEntry(String.Format("PropertyChanged: {0}", propertyName), System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.FullName, System.Reflection.MethodBase.GetCurrentMethod().Name),
+//                        System.Diagnostics.EventLogEntryType.Information,
+//                            99);
+//#endif
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
+//                //throw;
+//            }
+//        }
         #endregion INotifyPropertyChanged support
 
         #region IEquatable<CollateCondition> Members

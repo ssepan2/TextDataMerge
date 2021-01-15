@@ -158,8 +158,13 @@ namespace TextDataMergeConsole
         #region ConsoleAppBase
         protected void InitViewModel()
         {
-            //subscribe to notifications
-            ModelController<TDMModel>.Model.PropertyChanged += PropertyChangedEventHandlerDelegate;
+            //tell controller how model should notify view about non-persisted properties AND including model properties that may be part of settings
+            ModelController<TDMModel>.DefaultHandler = PropertyChangedEventHandlerDelegate;
+
+            //tell controller how settings should notify view about persisted properties
+            SettingsController<Settings>.DefaultHandler = PropertyChangedEventHandlerDelegate;
+
+            InitModelAndSettings();
 
             //class to handle standard behaviors
             ViewModelController<String, ConsoleViewModel<String, Settings, TDMModel>>.New
@@ -198,6 +203,20 @@ namespace TextDataMergeConsole
             {
                 //OPEN
                 ViewModel.FileOpen();
+            }
+        }
+
+        protected void InitModelAndSettings()
+        {
+            //create Settings before first use by Model
+            if (SettingsController<Settings>.Settings == null)
+            {
+                SettingsController<Settings>.New();
+            }
+            //Model properties rely on Settings, so don't call Refresh before this is run.
+            if (ModelController<TDMModel>.Model == null)
+            {
+                ModelController<TDMModel>.New();
             }
         }
 

@@ -93,8 +93,6 @@ namespace TextDataMergeForms
                 //load, parse, run switches
                 DoSwitches(args);
 
-                InitModelAndSettings();
-
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new TextDataMergeViewer(args));
@@ -126,20 +124,6 @@ namespace TextDataMergeForms
                     //new CommandLineSwitch("H", "H invokes the Help command.", false, ConsoleApplication.Help)//may already be loaded
                 }
             );
-        }
-
-        static void InitModelAndSettings()
-        {
-            //create Settings before first use by Model
-            if (SettingsController<Settings>.Settings == null)
-            {
-                SettingsController<Settings>.New();
-            }
-            //Model properties rely on Settings, so don't call Refresh before this is run.
-            if (ModelController<TDMModel>.Model == null)
-            {
-                ModelController<TDMModel>.New();
-            }
         }
         #endregion FormAppBase
 

@@ -42,7 +42,7 @@ namespace TextDataMergeLibrary
         /// </summary>
         /// <param name="anotherSettings"></param>
         /// <returns></returns>
-        public override Boolean Equals(IModel other)
+        public override Boolean Equals(IModelComponent other)
         {
             Boolean returnValue = default(Boolean);
             TDMModel otherModel = default(TDMModel);

@@ -5,15 +5,17 @@ using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 using Ssepan.Collections;
-using Ssepan.Utility;
 using System.Diagnostics;
 using System.Reflection;
+using Ssepan.Application;
+using Ssepan.Utility;
 
 namespace TextDataMergeLibrary
 {
     [Serializable()]
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public abstract class TextFunctionBase :
+        SettingsComponentBase,
         ITextFunction
     {
         #region Declarations

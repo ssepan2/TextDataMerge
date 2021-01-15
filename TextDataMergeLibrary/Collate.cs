@@ -5,9 +5,9 @@ using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 using Ssepan.Collections;
-using Ssepan.Utility;
 using System.Diagnostics;
 using System.Reflection;
+using Ssepan.Utility;
 
 namespace TextDataMergeLibrary
 {
