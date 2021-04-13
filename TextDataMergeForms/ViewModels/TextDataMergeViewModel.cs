@@ -1,17 +1,15 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Windows.Forms;
-using Ssepan.Utility;
-using Ssepan.Application;
+using Ssepan.Application.MVC;
+using Ssepan.Application.WinForms;
 using Ssepan.Collections;
 using Ssepan.Io;
+using Ssepan.Utility;
 using TextDataMergeLibrary;
 
 namespace TextDataMergeForms

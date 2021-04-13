@@ -1,26 +1,126 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8551779-9314-42A7-BE27-F2051A607183}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net48</TargetFramework>
-    <UseWindowsForms>true</UseWindowsForms>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <StartupObject>TextDataMergeForms.Program</StartupObject>
-    <ApplicationIcon>images\TextDataMerge.ico</ApplicationIcon>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TextDataMergeForms</RootNamespace>
+    <AssemblyName>TextDataMergeForms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextDataMergeViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextDataMergeViewer.Designer.cs">
+      <DependentUpon>TextDataMergeViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\TextDataMergeViewModel.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TextDataMergeViewer.resx">
+      <DependentUpon>TextDataMergeViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Ssepan.Application\Ssepan.Application.csproj">
+      <Project>{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}</Project>
+      <Name>Ssepan.Application</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Ssepan.Collections\Ssepan.Collections.csproj">
+      <Project>{07E139E8-739C-41C7-A53A-6AF3288B7B83}</Project>
+      <Name>Ssepan.Collections</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Ssepan.DataBinding\Ssepan.DataBinding.csproj">
+      <Project>{3E3137B5-D920-489C-AFA1-84E9D91F8D48}</Project>
+      <Name>Ssepan.DataBinding</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Ssepan.Io\Ssepan.Io.csproj">
+      <Project>{9EFE2EC6-F48E-4E4E-927F-068B54210E09}</Project>
+      <Name>Ssepan.Io</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ssepan.Patterns\Ssepan.Patterns.csproj">
+      <Project>{02B288FD-2642-4A7F-96E0-54031FA137F8}</Project>
+      <Name>Ssepan.Patterns</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Ssepan.Utility\Ssepan.Utility\Ssepan.Utility.csproj">
+      <Project>{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}</Project>
+      <Name>Ssepan.Utility</Name>
     </ProjectReference>
     <ProjectReference Include="..\TextDataFunctionControls\TextDataFunctionControls.csproj">
+      <Project>{C7DC7B44-A777-442E-AD54-6B5FB9F7932D}</Project>
+      <Name>TextDataFunctionControls</Name>
     </ProjectReference>
     <ProjectReference Include="..\TextDataMergeLibrary\TextDataMergeLibrary.csproj">
+      <Project>{83F1E22F-F6F4-4EE1-8AE2-751527D735DD}</Project>
+      <Name>TextDataMergeLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\TextDataMerge.ico" />
+    <Content Include="License.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

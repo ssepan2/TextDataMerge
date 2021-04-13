@@ -63,8 +63,8 @@ namespace TextDataMergeForms
             this.filterTab = new System.Windows.Forms.TabPage();
             this.filterEditor1 = new TextDataFunctionControls.FilterEditor();
             this.collateTab = new System.Windows.Forms.TabPage();
-            this.TabControl1 = new System.Windows.Forms.TabControl();
             this.collateEditor1 = new TextDataFunctionControls.CollateEditor();
+            this.TabControl1 = new System.Windows.Forms.TabControl();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -102,7 +102,7 @@ namespace TextDataMergeForms
             this.StatusBarErrorMessage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.StatusBarErrorMessage.ForeColor = System.Drawing.Color.Red;
             this.StatusBarErrorMessage.Name = "StatusBarErrorMessage";
-            this.StatusBarErrorMessage.Size = new System.Drawing.Size(1001, 17);
+            this.StatusBarErrorMessage.Size = new System.Drawing.Size(617, 17);
             this.StatusBarErrorMessage.Spring = true;
             this.StatusBarErrorMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -155,14 +155,14 @@ namespace TextDataMergeForms
             this.toolStripSeparator1,
             this.menuFileExit});
             this.menuFile.Name = "menuFile";
-            this.menuFile.Size = new System.Drawing.Size(35, 20);
+            this.menuFile.Size = new System.Drawing.Size(37, 20);
             this.menuFile.Text = "&File";
             // 
             // menuFileNew
             // 
             this.menuFileNew.Image = ((System.Drawing.Image)(resources.GetObject("menuFileNew.Image")));
             this.menuFileNew.Name = "menuFileNew";
-            this.menuFileNew.Size = new System.Drawing.Size(140, 22);
+            this.menuFileNew.Size = new System.Drawing.Size(146, 22);
             this.menuFileNew.Text = "&New";
             this.menuFileNew.Click += new System.EventHandler(this.menuFileNew_Click);
             // 
@@ -171,7 +171,7 @@ namespace TextDataMergeForms
             this.menuFileOpen.Image = ((System.Drawing.Image)(resources.GetObject("menuFileOpen.Image")));
             this.menuFileOpen.Name = "menuFileOpen";
             this.menuFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.menuFileOpen.Size = new System.Drawing.Size(140, 22);
+            this.menuFileOpen.Size = new System.Drawing.Size(146, 22);
             this.menuFileOpen.Text = "&Open";
             this.menuFileOpen.Click += new System.EventHandler(this.menuFileOpen_Click);
             // 
@@ -180,26 +180,26 @@ namespace TextDataMergeForms
             this.menuFileSave.Image = ((System.Drawing.Image)(resources.GetObject("menuFileSave.Image")));
             this.menuFileSave.Name = "menuFileSave";
             this.menuFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.menuFileSave.Size = new System.Drawing.Size(140, 22);
+            this.menuFileSave.Size = new System.Drawing.Size(146, 22);
             this.menuFileSave.Text = "&Save";
             this.menuFileSave.Click += new System.EventHandler(this.menuFileSave_Click);
             // 
             // menuFileSaveAs
             // 
             this.menuFileSaveAs.Name = "menuFileSaveAs";
-            this.menuFileSaveAs.Size = new System.Drawing.Size(140, 22);
+            this.menuFileSaveAs.Size = new System.Drawing.Size(146, 22);
             this.menuFileSaveAs.Text = "Save &As...";
             this.menuFileSaveAs.Click += new System.EventHandler(this.menuFileSaveAs_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(137, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // menuFileExit
             // 
             this.menuFileExit.Name = "menuFileExit";
-            this.menuFileExit.Size = new System.Drawing.Size(140, 22);
+            this.menuFileExit.Size = new System.Drawing.Size(146, 22);
             this.menuFileExit.Text = "E&xit";
             this.menuFileExit.Click += new System.EventHandler(this.menuFileExit_Click);
             // 
@@ -209,7 +209,7 @@ namespace TextDataMergeForms
             this.menuEditProperties});
             this.menuEdit.Enabled = false;
             this.menuEdit.Name = "menuEdit";
-            this.menuEdit.Size = new System.Drawing.Size(37, 20);
+            this.menuEdit.Size = new System.Drawing.Size(39, 20);
             this.menuEdit.Text = "&Edit";
             this.menuEdit.Visible = false;
             // 
@@ -219,7 +219,7 @@ namespace TextDataMergeForms
             this.menuEditProperties.Image = ((System.Drawing.Image)(resources.GetObject("menuEditProperties.Image")));
             this.menuEditProperties.ImageTransparentColor = System.Drawing.Color.Black;
             this.menuEditProperties.Name = "menuEditProperties";
-            this.menuEditProperties.Size = new System.Drawing.Size(138, 22);
+            this.menuEditProperties.Size = new System.Drawing.Size(139, 22);
             this.menuEditProperties.Text = "Properties ...";
             this.menuEditProperties.Visible = false;
             this.menuEditProperties.Click += new System.EventHandler(this.menuEditProperties_Click);
@@ -229,14 +229,14 @@ namespace TextDataMergeForms
             this.menuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuHelpAbout});
             this.menuHelp.Name = "menuHelp";
-            this.menuHelp.Size = new System.Drawing.Size(40, 20);
+            this.menuHelp.Size = new System.Drawing.Size(44, 20);
             this.menuHelp.Text = "&Help";
             this.menuHelp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // menuHelpAbout
             // 
             this.menuHelpAbout.Name = "menuHelpAbout";
-            this.menuHelpAbout.Size = new System.Drawing.Size(225, 22);
+            this.menuHelpAbout.Size = new System.Drawing.Size(235, 22);
             this.menuHelpAbout.Text = "&About TextDataMergeForms ...";
             this.menuHelpAbout.Click += new System.EventHandler(this.menuHelpAbout_Click);
             // 
@@ -391,6 +391,16 @@ namespace TextDataMergeForms
             this.collateTab.Text = "Collate";
             this.collateTab.UseVisualStyleBackColor = true;
             // 
+            // collateEditor1
+            // 
+            this.collateEditor1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.collateEditor1.Location = new System.Drawing.Point(0, 0);
+            this.collateEditor1.Name = "collateEditor1";
+            this.collateEditor1.Size = new System.Drawing.Size(621, 347);
+            this.collateEditor1.TabIndex = 0;
+            // 
             // TabControl1
             // 
             this.TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -405,16 +415,6 @@ namespace TextDataMergeForms
             this.TabControl1.SelectedIndex = 0;
             this.TabControl1.Size = new System.Drawing.Size(632, 376);
             this.TabControl1.TabIndex = 2;
-            // 
-            // collateEditor1
-            // 
-            this.collateEditor1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.collateEditor1.Location = new System.Drawing.Point(0, 0);
-            this.collateEditor1.Name = "collateEditor1";
-            this.collateEditor1.Size = new System.Drawing.Size(621, 347);
-            this.collateEditor1.TabIndex = 0;
             // 
             // TextDataMergeViewer
             // 

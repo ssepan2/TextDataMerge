@@ -1,24 +1,19 @@
 //#define USE_CONFIG_FILEPATH
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Windows.Forms; 
-using TextDataMergeLibrary;
-using TextDataMergeLibrary.Properties;
+using System.Windows.Forms;
 using Ssepan.Application;
-using Ssepan.Collections;
-using Ssepan.DataBinding;
+using Ssepan.Application.MVC;
 using Ssepan.Io;
 using Ssepan.Utility;
+using TextDataMergeLibrary;
+using TextDataMergeLibrary.Properties;
 
 namespace TextDataMergeForms
 {

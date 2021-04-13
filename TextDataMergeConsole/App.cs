@@ -10,6 +10,8 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using Ssepan.Application;
+using Ssepan.Application.WinConsole;
+using Ssepan.Application.MVC;
 using Ssepan.Utility;
 using TextDataMergeLibrary;
 
